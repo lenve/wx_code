@@ -1,4 +1,4 @@
-package com.tencent.wxcloudrun.dao;
+package com.tencent.wxcloudrun.mapper;
 
 import com.tencent.wxcloudrun.model.Counter;
 import org.apache.ibatis.annotations.Mapper;
