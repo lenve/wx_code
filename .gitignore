@@ -25,3 +25,5 @@ hs_err_pid*
 .idea/
 target/
 springboot-cloudbaserun.iml
+
+.DS_Store
