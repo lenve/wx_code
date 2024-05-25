@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Select;
  * @github：https://github.com/lenve
  * @gitee：https://gitee.com/lenve
  */
+@Mapper
 public interface SearchMapper {
     @Select(value = "select * from javavideo where keywords like concat('%',#{keywords},'%')")
     ResContent search(String keywords);
