@@ -7,8 +7,6 @@ import com.tencent.wxcloudrun.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.annotation.ElementType;
-
 /**
  * @author：江南一点雨
  * @site：http://www.javaboy.org
