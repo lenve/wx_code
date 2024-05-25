@@ -34,7 +34,11 @@ public class IndexController {
     @PostMapping("/search")
     public Msg search(@RequestBody Msg msg) {
         logger.info("msg: {}", msg);
-        return searchService.search(msg);
+        if (msg.getMsgType().equals("text")) {
+            return searchService.search(msg);
+        } else {
+            return null;
+        }
     }
 
 
