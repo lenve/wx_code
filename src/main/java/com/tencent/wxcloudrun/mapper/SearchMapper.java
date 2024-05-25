@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Select;
  */
 @Mapper
 public interface SearchMapper {
-    @Select(value = "select * from javavideo where keywords like concat('%',#{keywords},'%')")
+    @Select(value = "select * from javavideo where keywords =#{keywords} limit 1")
     ResContent search(String keywords);
 }
