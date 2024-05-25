@@ -20,6 +20,8 @@ public class SearchServiceImpl implements SearchService {
         String fromUserName = content.getFromUserName();
         msg.setFromUserName(content.getToUserName());
         msg.setToUserName(fromUserName);
+        msg.setMsgType("text");
+        msg.setCreateTime(System.currentTimeMillis());
         return msg;
     }
 }
