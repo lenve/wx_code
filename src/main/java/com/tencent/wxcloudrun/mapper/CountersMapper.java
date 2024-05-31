@@ -17,6 +17,6 @@ public interface CountersMapper {
 
   void clearCount(@Param("id") Integer id);
 
-  @Select(value = "select * from javavideo where keywords = #{keywords} limit 1")
+  @Select(value = "select * from javavideo where lower(keywords) = lower(#{keywords}) limit 1")
   ResContent search(String keywords);
 }
