@@ -43,7 +43,7 @@ public class CounterController {
     return "index";
   }
 
-  @RequestMapping("/search")
+  @RequestMapping("/api/count")
   public Msg search(@RequestBody Msg msg) {
     logger.info("msg: {}", msg);
     if (msg.getMsgType().equals("text")) {
@@ -57,7 +57,7 @@ public class CounterController {
    * 获取当前计数
    * @return API response json
    */
-  @GetMapping(value = "/api/count")
+//  @GetMapping(value = "/api/count")
   ApiResponse get() {
     logger.info("/api/count get request");
     Optional<Counter> counter = counterService.getCounter(1);
@@ -75,7 +75,7 @@ public class CounterController {
    * @param request {@link CounterRequest}
    * @return API response json
    */
-  @PostMapping(value = "/api/count")
+//  @PostMapping(value = "/api/count")
   ApiResponse create(@RequestBody CounterRequest request) {
     logger.info("/api/count post request, action: {}", request.getAction());
 
