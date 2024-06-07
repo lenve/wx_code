@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * index控制器
  */
-@RestController
+//@RestController
 
 public class IndexController {
 

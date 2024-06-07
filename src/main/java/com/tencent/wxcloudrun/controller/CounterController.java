@@ -1,5 +1,7 @@
 package com.tencent.wxcloudrun.controller;
 
+import com.tencent.wxcloudrun.model.Msg;
+import com.tencent.wxcloudrun.service.SearchService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.tencent.wxcloudrun.config.ApiResponse;
@@ -31,6 +33,28 @@ public class CounterController {
     this.logger = LoggerFactory.getLogger(CounterController.class);
   }
 
+  @Autowired
+  SearchService searchService;
+
+  /**
+   * 主页页面
+   *
+   * @return API response html
+   */
+  @GetMapping
+  public String index() {
+    return "index";
+  }
+
+  @PostMapping("/search")
+  public Msg search(@RequestBody Msg msg) {
+    logger.info("msg: {}", msg);
+    if (msg.getMsgType().equals("text")) {
+      return searchService.search(msg);
+    } else {
+      return null;
+    }
+  }
 
   /**
    * 获取当前计数
