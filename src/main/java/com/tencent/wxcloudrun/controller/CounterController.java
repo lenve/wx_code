@@ -45,10 +45,14 @@ public class CounterController {
 
   @RequestMapping("/api/count")
   public Msg search(@RequestBody Msg msg) {
-    logger.info("msg: {}", msg);
-    if (msg.getMsgType().equals("text")) {
-      return searchService.search(msg);
-    } else {
+    try {
+      logger.info("msg: {}", msg);
+      if (msg.getMsgType().equals("text")) {
+        return searchService.search(msg);
+      } else {
+        return null;
+      }
+    } catch (Exception e) {
       return null;
     }
   }
